@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Header from "../../components/header";
 import Navbar from "../../components/navbar";
+import Posts from "./posts";
+import Profile from "./profile";
+import Gallery from "./gallery";
+import Todo from "./todo";
 import { DashboardContainer, Seperator, Wrapper } from "./dashboard.styled";
 
 const Dashboard = () => {
@@ -41,12 +45,14 @@ const Dashboard = () => {
       <Navbar {...{ active, onActiveHandler }} />
       <Wrapper>
         <Header {...{ active, user }} />
-        <Seperator orientation="horizontal" />
+        <Seperator flexItem />
+        {/* <Profile {...{ user }} /> */}
+        {active === "posts" && <Posts />}
+        {active === "gallery" && <Gallery />}
+        {active === "toDo" && <Todo />}
       </Wrapper>
     </DashboardContainer>
   );
 };
 
 export default Dashboard;
-
-// <Profile {...{ active }} />

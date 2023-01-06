@@ -1,7 +1,6 @@
-import { Avatar, Typography } from "@mui/material";
+import { Avatar, Divider, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {
-  BreakLine,
   List,
   SignoutButton,
   SignoutContainer,
@@ -56,12 +55,12 @@ const Signout = ({ id, open, anchorEl, handleClose }) => {
           {user.email}
         </Typography>
       </UserProfile>
-      <BreakLine />
+      <Divider />
       <List variant="div" component="div">
         <Avatar src={user.profilepicture} alt={user.name} />
         {user.name}
       </List>
-      <BreakLine />
+      <Divider />
       <List variant="div" component="div">
         <Avatar src={user.profilepicture} alt={user.name} />
         {user.name}

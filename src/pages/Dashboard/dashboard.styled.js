@@ -9,10 +9,11 @@ export const DashboardContainer = styled(Grid)({
 
 export const Wrapper = styled(Stack)({
   display: "flex",
+  gap: "1rem",
   flexGrow: 1,
 });
 
 export const Seperator = styled(Divider)({
-  width: "100%",
-  borderBottomWidth: "0.1rem",
+  // width: "100%",
+  // borderBottomWidth: "0.1rem",
 });

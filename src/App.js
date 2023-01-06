@@ -3,10 +3,10 @@ import LandingPage from "./pages/login";
 import { GlobalStyles, ThemeProvider } from "@mui/material";
 import { theme } from "./utils/theme";
 import Dashboard from "./pages/Dashboard";
-import Profile from "./pages/profile";
-import Gallery from "./pages/gallery";
-import Posts from "./pages/posts";
-import Todo from "./pages/todo";
+// import Profile from "./pages/profile";
+// import Gallery from "./pages/gallery";
+// import Posts from "./pages/posts";
+// import Todo from "./pages/todo";
 
 const App = () => {
   return (

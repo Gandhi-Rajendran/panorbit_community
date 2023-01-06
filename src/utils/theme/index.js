@@ -35,6 +35,7 @@ export const theme = createTheme({
   //--- common
   primary: "#545454",
   secondary: "#9A9A9A",
+  disable: "#EEEEEE",
   button: "#ffffff",
 
   // ****************** Loader Color ******************

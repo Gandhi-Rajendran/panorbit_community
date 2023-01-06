@@ -30,8 +30,8 @@ export const Main = styled(Box)(({ theme }) => ({
   backgroundColor: theme.loginModalMain,
 
   "& .MuiAvatar-root": {
-    width: "2.3rem",
-    height: "2.3rem",
+    width: "2.5rem",
+    height: "2.5rem",
     marginRight: "0.6rem",
   },
 
@@ -41,11 +41,6 @@ export const Main = styled(Box)(({ theme }) => ({
       backgroundColor: theme.loginModalListHover,
       cursor: "pointer",
     },
-  },
-
-  "::-webkit-slider-thumb": {
-    width: "5rem",
-    backgroundColor: "red",
   },
 }));
 

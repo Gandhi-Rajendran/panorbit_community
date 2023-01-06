@@ -33,7 +33,7 @@ const Navbar = ({ active, onActiveHandler }) => {
       <Nav
         to="/user/1"
         select={active === "todo" ? 1 : 0}
-        onClick={() => onActiveHandler("todo")}
+        onClick={() => onActiveHandler("toDo")}
       >
         ToDo
       </Nav>
