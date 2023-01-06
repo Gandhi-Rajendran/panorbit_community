@@ -8,14 +8,14 @@ export const AccountContainer = styled(Paper)(({ theme }) => ({
   maxWidth: "35rem",
   borderRadius: "2rem",
   overflow: "hidden",
-  color: theme.landingModalText,
+  color: theme.loginModalText,
 }));
 
 export const Header = styled(Typography)(({ theme }) => ({
   textAlign: "center",
   padding: "2.5rem",
   fontWeight: 600,
-  backgroundColor: theme.landingModalHeader,
+  backgroundColor: theme.loginModalHeader,
 }));
 
 export const Main = styled(Box)(({ theme }) => ({
@@ -27,7 +27,7 @@ export const Main = styled(Box)(({ theme }) => ({
   marginRight: "0.4rem",
   fontSize: "1.1rem",
   fontWeight: 450,
-  backgroundColor: theme.landingModalMain,
+  backgroundColor: theme.loginModalMain,
 
   "& .MuiAvatar-root": {
     width: "2.3rem",
@@ -38,7 +38,7 @@ export const Main = styled(Box)(({ theme }) => ({
   "& .MuiListItem-root": {
     padding: "0.5rem 0",
     "&:hover": {
-      backgroundColor: theme.landingModalListHover,
+      backgroundColor: theme.loginModalListHover,
       cursor: "pointer",
     },
   },

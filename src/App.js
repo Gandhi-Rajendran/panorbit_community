@@ -1,8 +1,12 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/login";
-import Home from "./pages/home";
 import { GlobalStyles, ThemeProvider } from "@mui/material";
 import { theme } from "./utils/theme";
+import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/profile";
+import Gallery from "./pages/gallery";
+import Posts from "./pages/posts";
+import Todo from "./pages/todo";
 
 const App = () => {
   return (
@@ -35,12 +39,17 @@ const App = () => {
           },
         })}
       />
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<LandingPage />} />
-          <Route path="/user/:{userId}" element={<Home />} />
-          {/* <Route path="*" element={<Home />} /> */}
+          <Route path="/user/:userId/" element={<Dashboard />} />
+          {/* <Route path="/user/:userId/profile" element={<Profile />} />
+            <Route path="/user/:userId/gallery" element={<Gallery />} />
+            <Route path="/user/:userId/posts" element={<Posts />} />
+            <Route path="/user/:userId/todo" element={<Todo />} />
+          </Route> */}
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

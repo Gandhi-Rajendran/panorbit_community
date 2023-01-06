@@ -1,7 +1,11 @@
-import React from "react";
+import { ProfileContainer } from "./profile.styled";
 
 const Profile = () => {
-  return <div>Profile</div>;
+  return (
+    <ProfileContainer>
+      <h1>Profile</h1>
+    </ProfileContainer>
+  );
 };
 
 export default Profile;

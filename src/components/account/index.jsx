@@ -6,13 +6,12 @@ import { AccountContainer, Header, Loader, Main } from "./account.styled";
 
 const Accounts = () => {
   const navigate = useNavigate();
-  const URL = "https://panorbit.in/api/users.json";
+  const URL = process.env.REACT_APP_USERS_API;
   const { datas: users, loading, error } = useFetch(URL);
   console.log(users, loading, error);
 
-  const loginHandler = (id) => {
-    console.log("id", id);
-    // navigate
+  const loginHandler = (userId) => {
+    navigate(`/user/${userId}`);
   };
 
   return (
