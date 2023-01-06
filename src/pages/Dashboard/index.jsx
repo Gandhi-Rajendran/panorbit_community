@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Header from "../../components/header";
 import Navbar from "../../components/navbar";
-// import Profile from "../profile";
-import { DashboardContainer, Wrapper } from "./dashboard.styled";
+import { DashboardContainer, Seperator, Wrapper } from "./dashboard.styled";
 
 const Dashboard = () => {
   const [active, setActive] = useState("profile");
@@ -42,6 +41,7 @@ const Dashboard = () => {
       <Navbar {...{ active, onActiveHandler }} />
       <Wrapper>
         <Header {...{ active, user }} />
+        <Seperator orientation="horizontal" />
       </Wrapper>
     </DashboardContainer>
   );
