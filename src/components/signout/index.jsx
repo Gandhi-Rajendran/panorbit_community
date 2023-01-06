@@ -46,14 +46,6 @@ const Signout = ({ id, open, anchorEl, handleClose }) => {
       open={open}
       anchorEl={anchorEl}
       onClose={handleClose}
-      anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "center",
-      }}
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "center",
-      }}
     >
       <UserProfile>
         <Avatar src={user.profilepicture} alt={user.name} />

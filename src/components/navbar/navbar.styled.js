@@ -1,15 +1,10 @@
-import { styled, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Stack, styled, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export const NavbarContainer = styled(Box)(({ theme }) => ({
-  width: "20%",
+export const NavbarContainer = styled(Stack)(({ theme }) => ({
   minWidth: "18rem",
-  borderRadius: "1.5rem",
-  display: "flex",
-  flexDirection: "column",
+  borderRadius: "1.8rem",
   justifyContent: "center",
-  // alignItems: "center",
 
   background: `linear-gradient(${theme.navGradientStart},${theme.navGradientEnd})`,
 }));
@@ -21,7 +16,7 @@ export const Nav = styled(Link)(({ theme, select }) => ({
   padding: "1rem 3rem",
   borderRadius: "0 -1rem -1rem 0",
   position: "relative",
-  backgroundColor: "blue",
+  // backgroundColor: "blue",
   "&:hover": {
     backgroundColor: "blue",
   },
@@ -79,7 +74,7 @@ export const Nav = styled(Link)(({ theme, select }) => ({
 }));
 
 export const IconBox = styled(Typography)(({ theme }) => ({
-  backgroundColor: "red",
+  // backgroundColor: "red",
   // display: "inline-block",
   position: "absolute",
   top: 0,

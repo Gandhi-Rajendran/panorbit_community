@@ -32,9 +32,9 @@ export const theme = createTheme({
   navActive: "#FFFFFF",
   navInActive: "#A5A5E4",
 
-  //--- signout
-  signoutPrimary: "#4A4A4A",
-  signoutSecondary: "#9A9A9A",
+  //--- common
+  primary: "#545454",
+  secondary: "#9A9A9A",
   button: "#ffffff",
 
   // ****************** Loader Color ******************

@@ -1,16 +1,14 @@
 import { Divider } from "@mui/material";
-import { useState } from "react";
 import { IconBox, Nav, NavbarContainer } from "./navbar.styled";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-const Navbar = () => {
-  const [isActive, setIsActive] = useState("profile");
+const Navbar = ({ active, onActiveHandler }) => {
   return (
     <NavbarContainer>
       <Nav
         to="/user/1"
-        select={isActive === "profile" ? 1 : 0}
-        onClick={() => setIsActive("profile")}
+        select={active === "profile" ? 1 : 0}
+        onClick={() => onActiveHandler("profile")}
       >
         Profile
         <IconBox variant="span" component="span">
@@ -20,26 +18,25 @@ const Navbar = () => {
       <Divider />
       <Nav
         to="/user/1"
-        select={isActive === "posts" ? 1 : 0}
-        onClick={() => setIsActive("posts")}
+        select={active === "posts" ? 1 : 0}
+        onClick={() => onActiveHandler("posts")}
       >
         Posts
       </Nav>
       <Nav
         to="/user/1"
-        select={isActive === "gallery" ? 1 : 0}
-        onClick={() => setIsActive("gallery")}
+        select={active === "gallery" ? 1 : 0}
+        onClick={() => onActiveHandler("gallery")}
       >
         Gallery
       </Nav>
       <Nav
         to="/user/1"
-        select={isActive === "todo" ? 1 : 0}
-        onClick={() => setIsActive("todo")}
+        select={active === "todo" ? 1 : 0}
+        onClick={() => onActiveHandler("todo")}
       >
         ToDo
       </Nav>
-      
     </NavbarContainer>
   );
 };
