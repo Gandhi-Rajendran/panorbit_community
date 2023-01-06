@@ -22,7 +22,6 @@ const Accounts = () => {
       </Header>
       <Main>
         <Loader loading={loading} />
-        {/* <Loader /> */}
         {error && <h3>{error}</h3>}
         {users?.map((user) => (
           <Stack key={user.id} onClick={() => loginHandler(`${user.id}`)}>
