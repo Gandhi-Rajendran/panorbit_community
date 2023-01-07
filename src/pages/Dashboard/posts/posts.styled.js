@@ -1,7 +1,9 @@
 import { Stack, styled } from "@mui/material";
 
 export const PostsContainer = styled(Stack)(({ theme }) => ({
-  paddingTop: "15%",
+  position: "absolute",
+  top: "40%",
+  left: "40%",
   alignItems: "center",
   flexGrow: 1,
 

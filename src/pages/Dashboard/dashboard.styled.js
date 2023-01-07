@@ -5,6 +5,7 @@ export const DashboardContainer = styled(Grid)({
   height: "100vh",
   padding: "2rem",
   gap: "2rem",
+  position: "relative",
 });
 
 export const Wrapper = styled(Stack)({

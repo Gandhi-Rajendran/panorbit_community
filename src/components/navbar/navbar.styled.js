@@ -2,7 +2,7 @@ import { Stack, styled, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled(Stack)(({ theme }) => ({
-  minWidth: "18rem",
+  width: "18rem",
   borderRadius: "1.8rem",
   justifyContent: "center",
 
