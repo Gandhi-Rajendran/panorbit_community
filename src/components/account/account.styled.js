@@ -19,7 +19,7 @@ export const Header = styled(Typography)(({ theme }) => ({
 }));
 
 export const Main = styled(Box)(({ theme }) => ({
-  position: "relative",
+  // position: "relative",
   overflowY: "scroll",
   height: "25rem",
   padding: "0 2.5rem",
@@ -44,12 +44,12 @@ export const Main = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const Loader = styled(PulseLoader)(({ theme }) => ({
+export const Loader = styled(PulseLoader)({
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%,-50%)",
-}));
+});
 Loader.defaultProps = {
   color: theme.loader,
   size: 10,

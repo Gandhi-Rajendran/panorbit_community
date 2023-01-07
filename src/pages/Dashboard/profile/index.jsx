@@ -56,7 +56,7 @@ const Profile = ({ user }) => {
             </Typography>
           </ListItem>
         </List>
-        <Divider flexItem middle />
+        <Divider flexItem middle={1} />
         <Stack>
           <h1>Company</h1>
         </Stack>

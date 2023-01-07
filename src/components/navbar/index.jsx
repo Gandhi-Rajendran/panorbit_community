@@ -6,7 +6,7 @@ const Navbar = ({ active, onActiveHandler }) => {
   return (
     <NavbarContainer>
       <Nav
-        to="/user/1"
+        to="/dashboard/1"
         select={active === "profile" ? 1 : 0}
         onClick={() => onActiveHandler("profile")}
       >
@@ -17,21 +17,21 @@ const Navbar = ({ active, onActiveHandler }) => {
       </Nav>
       <Divider />
       <Nav
-        to="/user/1"
+        to="/dashboard/1"
         select={active === "posts" ? 1 : 0}
         onClick={() => onActiveHandler("posts")}
       >
         Posts
       </Nav>
       <Nav
-        to="/user/1"
+        to="/dashboard/1"
         select={active === "gallery" ? 1 : 0}
         onClick={() => onActiveHandler("gallery")}
       >
         Gallery
       </Nav>
       <Nav
-        to="/user/1"
+        to="/dashboard/1"
         select={active === "todo" ? 1 : 0}
         onClick={() => onActiveHandler("toDo")}
       >

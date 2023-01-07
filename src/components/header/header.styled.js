@@ -1,12 +1,11 @@
-import { Divider, Grid, styled, Typography } from "@mui/material";
+import { Grid, styled, Typography } from "@mui/material";
 
-export const HeaderContainer = styled(Grid)(({ theme }) => ({
+export const HeaderContainer = styled(Grid)({
   width: "100%",
-  height: "10%",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-}));
+});
 
 export const Title = styled(Typography)(({ theme }) => ({
   fontSize: "1.6rem",
@@ -14,6 +13,7 @@ export const Title = styled(Typography)(({ theme }) => ({
   textTransform: "capitalize",
   color: theme.primary,
 }));
+
 export const UserInfo = styled(Grid)(({ theme }) => ({
   display: "flex",
   alignItems: "center",

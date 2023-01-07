@@ -6,52 +6,39 @@ import Profile from "./profile";
 import Gallery from "./gallery";
 import Todo from "./todo";
 import { DashboardContainer, Seperator, Wrapper } from "./dashboard.styled";
+import { useParams } from "react-router-dom";
+import { UseFetchById } from "../../utils/constants";
+import Spinner from "../../components/spinner";
 
 const Dashboard = () => {
   const [active, setActive] = useState("profile");
 
-  const user = {
-    id: 1,
-    name: "Leanne Graham",
-    username: "Bret",
-    email: "Sincere@april.biz",
-    profilepicture:
-      "https://panorbit.in/wp-content/uploads/2019/hotlink-ok/1001.jpeg",
-    address: {
-      street: "Kulas Light",
-      suite: "Apt. 556",
-      city: "Gwenborough",
-      zipcode: "92998-3874",
-      geo: {
-        lat: "-37.3159",
-        lng: "81.1496",
-      },
-    },
-    phone: "1-770-736-8031 x56442",
-    website: "hildegard.org",
-    company: {
-      name: "Romaguera-Crona",
-      catchPhrase: "Multi-layered client-server neural-net",
-      bs: "harness real-time e-markets",
-    },
-  };
+  const param = useParams();
+  const URL = process.env.REACT_APP_USERS_API;
+  const { user, loading, error } = UseFetchById(URL, param.userId);
 
   const onActiveHandler = (tab) => {
     setActive(tab);
   };
 
   return (
-    <DashboardContainer container>
-      <Navbar {...{ active, onActiveHandler }} />
-      <Wrapper>
-        <Header {...{ active, user }} />
-        <Seperator flexItem />
-        {/* <Profile {...{ user }} /> */}
-        {active === "posts" && <Posts />}
-        {active === "gallery" && <Gallery />}
-        {active === "toDo" && <Todo />}
-      </Wrapper>
-    </DashboardContainer>
+    <>
+      <Spinner loading={loading} />
+      {error ? <h1>{error}</h1> : null}
+      {user ? (
+        <DashboardContainer container>
+          <Navbar {...{ active, onActiveHandler }} />
+          <Wrapper>
+            <Header {...{ active, user }} />
+            <Seperator flexItem />
+            {active === "profile" && <Profile {...{ user }} />}
+            {active === "posts" && <Posts />}
+            {active === "gallery" && <Gallery />}
+            {active === "toDo" && <Todo />}
+          </Wrapper>
+        </DashboardContainer>
+      ) : null}
+    </>
   );
 };
 

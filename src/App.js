@@ -42,9 +42,9 @@ const App = () => {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<LandingPage />} />
-          <Route path="/user/:userId/" element={<Dashboard />} />
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<LandingPage />} />
+          <Route path="/dashboard/:userId/" element={<Dashboard />} />
           {/* <Route path="/user/:userId/profile" element={<Profile />} />
             <Route path="/user/:userId/gallery" element={<Gallery />} />
             <Route path="/user/:userId/posts" element={<Posts />} />
