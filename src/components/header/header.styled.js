@@ -8,7 +8,7 @@ export const HeaderContainer = styled(Grid)({
 });
 
 export const Title = styled(Typography)(({ theme }) => ({
-  fontSize: "1.6rem",
+  fontSize: "1.25rem",
   fontWeight: "bold",
   textTransform: "capitalize",
   color: theme.primary,
@@ -17,17 +17,17 @@ export const Title = styled(Typography)(({ theme }) => ({
 export const UserInfo = styled(Grid)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  fontSize: "1.2rem",
-  fontWeight: 500,
-  color: theme.secondary,
+  fontSize: "0.9rem",
+  fontWeight: 600,
+  color: theme.userInfo,
 
   "&:hover": {
     cursor: "pointer",
   },
 
   "& .MuiAvatar-root": {
-    width: "2.5rem",
-    height: "2.5rem",
+    width: "2rem",
+    height: "2rem",
     marginRight: "0.5rem",
   },
 }));

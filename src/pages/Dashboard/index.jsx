@@ -26,7 +26,7 @@ const Dashboard = () => {
       <Spinner loading={loading} />
       {error ? <h1>{error}</h1> : null}
       {user ? (
-        <DashboardContainer container>
+        <DashboardContainer>
           <Navbar {...{ active, onActiveHandler }} />
           <Wrapper>
             <Header {...{ active, user }} />

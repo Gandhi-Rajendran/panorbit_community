@@ -8,7 +8,6 @@ const Accounts = () => {
   const navigate = useNavigate();
   const URL = process.env.REACT_APP_USERS_API;
   const { datas: users, loading, error } = UseFetch(URL);
-
   const loginHandler = (userId) => {
     navigate(`/dashboard/${userId}`);
   };
