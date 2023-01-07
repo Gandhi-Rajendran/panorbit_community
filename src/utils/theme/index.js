@@ -20,9 +20,13 @@ export const theme = createTheme({
   navGradientEnd: "#583FC8",
   // navGradientStart: "#3C57C8",
   // navGradientEnd: "#5840C8",
+  navArrow: "#ffffff",
+  navBg: "#474DC8",
 
   //--- signout
   buttonBg: "#D55151",
+
+  //--- Nav
 
   // ****************** Text Color ******************
   //--- Login

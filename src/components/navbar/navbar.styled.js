@@ -1,94 +1,63 @@
-import { Stack, styled, Typography } from "@mui/material";
+import { Divider, Icon, ListItem, Stack, styled } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled(Stack)(({ theme }) => ({
-  minWidth: "18rem",
+  minWidth: "16rem",
   borderRadius: "1.8rem",
   justifyContent: "center",
-
   background: `linear-gradient(${theme.navGradientStart},${theme.navGradientEnd})`,
 }));
+
+export const Item = styled(ListItem)({
+  padding: 0,
+  // background: "grey",
+});
 
 export const Nav = styled(Link)(({ theme, select }) => ({
   color: select ? `${theme.navActive}` : `${theme.navInActive}`,
   fontSize: "1.2rem",
   fontWeight: 500,
-  padding: "1rem 3rem",
-  borderRadius: "0 -1rem -1rem 0",
-  position: "relative",
-  // backgroundColor: "blue",
-  "&:hover": {
-    backgroundColor: "blue",
-  },
-  // overflow: "hidden",
-  // "&::before": {
-  //   content: `""`,
-  //   height: "100%",
-  //   borderRadius: "50% 0 0 50%",
-  //   width: "3rem",
-  //   position: "absolute",
-  //   top: 0,
-  //   right: 0,
-  //   backgroundColor: "darkcyan",
-
-  //   "&::before": {
-  //     backgroundColor: "white",
-  //     content: `""`,
-  //     height: "2rem",
-  //     width: "2rem",
-  //     position: "absolute",
-  //     bottom: "-2rem",
-  //     right: 0,
-  // borderTopRightRadius: "1rem",
-  // },
-  // borderBottomRightRadius: "1rem",
-  // },
-  // "&::after": {
-  //   content: `""`,
-  //   height: "2rem",
-  //   width: "2rem",
-  //   position: "absolute",
-  //   bottom: "-2rem",
-  //   right: 0,
-  //   backgroundColor: "darkcyan",
-  //   borderTopRightRadius: "1rem",
-  //   overflow: "hidden",
-  // },
-  // },
-
-  // "& svg": {
-  // position: "absolute",
-  // zIndex: 10,
-  // padding: "1rem",
-
-  // top: "50%",
-  // right: 0,
-  // height: "100%",
-  // width: "3rem",
-  // height: "3rem",
-  // color: "red",
-  // backgroundColor: "lime",
-  // },
-
-  // borderBottom: "0.1rem solid red",
+  margin: "0.5rem 3rem",
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
 }));
 
-export const IconBox = styled(Typography)(({ theme }) => ({
-  // backgroundColor: "red",
-  // display: "inline-block",
-  position: "absolute",
-  top: 0,
-  margin: "auto",
-  right: 0,
-  width: "2rem",
-  height: "60%",
-  borderRadius: "50% 0 0 50%",
-  "& svg": {
-    display: "block",
-    margin: "auto",
-    color: "black",
-    // justifyContent: "center",
-    // alignItems: "center",
-    // alignItems:"center"
+export const IconWrapper = styled(Icon)(({ theme }) => ({
+  backgroundColor: theme.navArrow,
+  width: "1.75rem",
+  height: "2rem",
+  color: theme.secondary,
+  borderRadius: "100%  0 0 100% ",
+  display: "flex",
+  alignItems: "center",
+
+  "&::before": {
+    content: `""`,
+    position: "absolute",
+    right: "0",
+    top: "-0.88rem",
+    width: "1.2rem",
+    height: "1.2rem",
+    borderBottomRightRadius: "12px",
+    boxShadow: `5px 6px 0 ${theme.navArrow}`,
+    backgroundColor: theme.navBg,
   },
+  "&::after": {
+    content: `""`,
+    position: "absolute",
+    right: 0,
+    bottom: "-0.89rem",
+    width: "1.2rem",
+    height: "1.2rem",
+    borderTopRightRadius: "12px",
+    boxShadow: `5px -6px 0 ${theme.navArrow}`,
+    backgroundColor: theme.navBg,
+  },
+}));
+
+export const Divide = styled(Divider)(({ theme }) => ({
+  borderBottomWidth: "0.1rem",
+  borderColor: theme.navInActive,
+  margin: "0 3rem",
 }));
