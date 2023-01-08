@@ -1,10 +1,10 @@
-import { Avatar, Divider, ListItem, Stack } from "@mui/material";
+import { Avatar, Divider, ListItem, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { UseFetchAll } from "../../utils/fetch";
 import Spinner from "../spinner";
-import { AccountContainer, Header, Main } from "./account.styled";
+import { AccountContainer, Header, Main } from "./userAccounts.styled";
 
-const Accounts = () => {
+const UserAccounts = () => {
   const navigate = useNavigate();
   const URL = process.env.REACT_APP_USERS_API;
   const { datas: users, loading, error } = UseFetchAll(URL);
@@ -22,13 +22,18 @@ const Accounts = () => {
         </Header>
         <Main>
           {users?.map((user) => (
-            <Stack key={user.id} onClick={() => loginHandler(`${user.id}`)}>
+            <Typography
+              variant="div"
+              component="div"
+              key={user.id}
+              onClick={() => loginHandler(`${user.id}`)}
+            >
               <ListItem>
                 <Avatar src={user.profilepicture} alt={user.name} />
                 {user.name}
               </ListItem>
-              <Divider />
-            </Stack>
+              <Divider orientation="horizontal" flexItem />
+            </Typography>
           ))}
         </Main>
       </AccountContainer>
@@ -36,8 +41,4 @@ const Accounts = () => {
   );
 };
 
-export default Accounts;
-
-//  {!users?.length > 0 ? (
-//         <Spinner loading={true} />
-//       ) :
+export default UserAccounts;

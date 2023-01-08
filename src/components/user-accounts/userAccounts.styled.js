@@ -1,10 +1,11 @@
-import { Box, Paper, styled, Typography } from "@mui/material";
+import { Box, List, Paper, Stack, styled, Typography } from "@mui/material";
 import { PulseLoader } from "react-spinners";
 import { theme } from "../../utils/theme";
 
 export const AccountContainer = styled(Paper)(({ theme }) => ({
   margin: "auto",
-  width: "40%",
+  height: "28rem",
+  width: "34%",
   maxWidth: "35rem",
   borderRadius: "2rem",
   overflow: "hidden",
@@ -13,21 +14,19 @@ export const AccountContainer = styled(Paper)(({ theme }) => ({
 
 export const Header = styled(Typography)(({ theme }) => ({
   textAlign: "center",
-  padding: "2.5rem",
+  padding: "2rem",
   fontWeight: 600,
   backgroundColor: theme.loginModalHeader,
 }));
 
-export const Main = styled(Box)(({ theme }) => ({
-  // position: "relative",
+export const Main = styled(List)(({ theme }) => ({
   overflowY: "scroll",
-  height: "25rem",
-  padding: "0 2.5rem",
-  marginBottom: "1.5rem",
-  marginRight: "0.4rem",
-  fontSize: "1.1rem",
+  height: "20rem",
+  marginRight: "0.35rem",
+  fontSize: "1.rem",
   fontWeight: 450,
   backgroundColor: theme.loginModalMain,
+  position: "relative",
 
   "& .MuiAvatar-root": {
     width: "2.5rem",
@@ -35,24 +34,18 @@ export const Main = styled(Box)(({ theme }) => ({
     marginRight: "0.6rem",
   },
 
-  "& .MuiListItem-root": {
-    padding: "0.5rem 0",
+  "& div": {
     "&:hover": {
-      backgroundColor: theme.loginModalListHover,
+      backgroundColor: theme.hover,
       cursor: "pointer",
     },
   },
-}));
 
-export const Loader = styled(PulseLoader)({
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%,-50%)",
-});
-Loader.defaultProps = {
-  color: theme.loader,
-  size: 10,
-  margin: 3,
-  speed: 0.5,
-};
+  "& .MuiListItem-root": {
+    padding: "0.4rem 1.5rem",
+  },
+
+  "& hr": {
+    margin: "0 1.5rem",
+  },
+}));

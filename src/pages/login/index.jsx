@@ -1,10 +1,10 @@
-import Accounts from "../../components/account";
+import UserAccounts from "../../components/user-accounts";
 import { LoginContainer } from "./login.styled";
 
 const Login = () => {
   return (
     <LoginContainer>
-      <Accounts />
+      <UserAccounts />
     </LoginContainer>
   );
 };
