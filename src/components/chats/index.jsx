@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
-import { Avatar, Icon, ListItem, Stack, Typography } from "@mui/material";
+import { Avatar, Icon, ListItem, Stack } from "@mui/material";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import { UseFetchAll } from "../../utils/fetch";
 import { generateRandomNumbers } from "../../utils/helper";
+import Message from "../message";
 import {
   ChatContainer,
   ChatHeader,
   ChatItem,
   ChatSection,
   IconSection,
+  IconWrapper,
   StatusIcon,
 } from "./chats.styled";
 
@@ -19,6 +21,17 @@ const Chats = ({ activeUserId }) => {
   const { users, loading, error } = UseFetchAll(URL);
   const [isChat, setIsChat] = useState(false);
   const [onlineUser, setOnlineUser] = useState(null);
+  const [isMinimize, setIsMinimize] = useState(false);
+  const [isMessage, setIsMessage] = useState(null);
+
+  const onModalMinimizeHandler = () => {
+    setIsMinimize(!isMinimize);
+  };
+
+  const onMsgCloseHandler = () => {
+    setIsMessage(null);
+    setIsMinimize(false);
+  };
 
   useEffect(() => {
     setOnlineUser(generateRandomNumbers(activeUserId));
@@ -29,39 +42,54 @@ const Chats = ({ activeUserId }) => {
   };
 
   return (
-    <ChatContainer>
-      <ChatHeader onClick={onChatModalHandler}>
-        <IconSection>
-          <Icon>
-            <ModeCommentOutlinedIcon />
-          </Icon>
-          Chats
-        </IconSection>
-        <Stack>
-          <Icon>
-            {isChat ? (
-              <KeyboardArrowDownOutlinedIcon />
-            ) : (
-              <KeyboardArrowUpOutlinedIcon />
-            )}
-          </Icon>
-        </Stack>
-      </ChatHeader>
-      <ChatSection open={isChat ? 1 : 0}>
-        {error ? <h1>{error}</h1> : null}
-        {users?.map((user) => (
-          <ChatItem key={user.id}>
-            <ListItem>
-              <Avatar src={user.profilepicture} alt={user.name} />
-              {user.name}
-            </ListItem>
-            <StatusIcon
-              activeuser={onlineUser?.includes(user.id) ? 1 : 0}
-            ></StatusIcon>
-          </ChatItem>
-        ))}
-      </ChatSection>
-    </ChatContainer>
+    <>
+      <ChatContainer>
+        <ChatHeader>
+          <IconSection>
+            <Icon>
+              <ModeCommentOutlinedIcon />
+            </Icon>
+            Chats
+          </IconSection>
+          <IconWrapper onClick={onChatModalHandler}>
+            <Icon>
+              {isChat ? (
+                <KeyboardArrowDownOutlinedIcon />
+              ) : (
+                <KeyboardArrowUpOutlinedIcon />
+              )}
+            </Icon>
+          </IconWrapper>
+        </ChatHeader>
+        <ChatSection open={isChat ? 1 : 0}>
+          {error ? <h1>{error}</h1> : null}
+          {users?.map((user) => (
+            <ChatItem key={user.id}>
+              <ListItem
+                onClick={() => {
+                  setIsMinimize(true);
+                  setIsMessage(user);
+                }}
+              >
+                <Avatar src={user.profilepicture} alt={user.name} />
+                {user.name}
+              </ListItem>
+              <StatusIcon
+                activeuser={onlineUser?.includes(user.id) ? 1 : 0}
+              ></StatusIcon>
+            </ChatItem>
+          ))}
+        </ChatSection>
+      </ChatContainer>
+      <Message
+        {...{
+          isMinimize,
+          isMessage,
+          onModalMinimizeHandler,
+          onMsgCloseHandler,
+        }}
+      />
+    </>
   );
 };
 

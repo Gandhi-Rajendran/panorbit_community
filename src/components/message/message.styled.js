@@ -1,18 +1,18 @@
 import { Stack, styled, Typography } from "@mui/material";
 
-export const ChatContainer = styled(Stack)(({ theme }) => ({
+export const MessageContainer = styled(Stack)(({ theme }) => ({
   position: "absolute",
   zIndex: 100,
-  right: 0,
+  right: "16rem",
   bottom: 0,
-  minWidth: "14rem",
+  minWidth: "17.5rem",
   border: `0.1rem solid ${theme.main}`,
   borderBottom: "none",
   borderRadius: "1rem 1rem 0 0",
   overflow: "hidden",
 }));
 
-export const ChatHeader = styled(Stack)(({ theme }) => ({
+export const MessageHeader = styled(Stack)(({ theme }) => ({
   width: "100%",
   padding: "0.5rem",
   backgroundColor: theme.main,
@@ -24,33 +24,37 @@ export const ChatHeader = styled(Stack)(({ theme }) => ({
     diplay: "flex",
     margin: "auto",
   },
+  ". MuiStack-root": {
+    backgroundColor: "red",
+    "&:hover": {
+      cursor: "pointer",
+    },
+  },
 }));
-ChatHeader.defaultProps = {
+MessageHeader.defaultProps = {
   direction: "row",
+  spacing: 3,
 };
 
-export const IconWrapper = styled(Stack)({
-  "&:hover": {
-    cursor: "pointer",
-  },
-});
-export const IconSection = styled(Stack)({
+export const HeaderSection = styled(Stack)({
   alignItems: "center",
-  "& span": {
+  "& .MuiAvatar-root": {
+    width: "2rem",
+    height: "2rem",
     marginRight: "0.5rem",
   },
 });
-IconSection.defaultProps = {
+HeaderSection.defaultProps = {
   direction: "row",
 };
 
-export const ChatSection = styled(Stack)(({ theme, open }) => ({
-  height: "18rem",
+export const MessageSection = styled(Stack)(({ theme, isminimize }) => ({
+  height: "12rem",
   padding: "0 0.25rem 0 0.4rem",
   fontSize: "0.8rem",
   fontWeight: 600,
   overflowY: "scroll",
-  display: open ? "block" : "none",
+  display: isminimize ? "block" : "none",
   backgroundColor: theme.whitePrimary,
 }));
 
