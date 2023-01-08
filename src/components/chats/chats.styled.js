@@ -1,4 +1,4 @@
-import { Stack, styled } from "@mui/material";
+import { Stack, styled, Typography } from "@mui/material";
 
 export const ChatContainer = styled(Stack)(({ theme }) => ({
   position: "absolute",
@@ -67,12 +67,7 @@ export const ChatItem = styled(Stack)(({ theme, activeuser }) => ({
     // backgroundColor: activeuser ? `${theme.online}` : `${theme.offline}`,
   },
 
-  "& p": {
-    borderRadius: "50%",
-    width: "0.4rem",
-    height: "0.4rem",
-    backgroundColor: activeuser ? `${theme.online}` : `${theme.offline}`,
-  },
+  // "& p": {},
 
   "&:hover": {
     cursor: "pointer",
@@ -82,3 +77,10 @@ export const ChatItem = styled(Stack)(({ theme, activeuser }) => ({
 ChatItem.defaultProps = {
   direction: "row",
 };
+
+export const StatusIcon = styled(Typography)(({ theme, activeuser }) => ({
+  borderRadius: "50%",
+  width: "0.4rem",
+  height: "0.4rem",
+  backgroundColor: activeuser ? `${theme.online}` : `${theme.offline}`,
+}));

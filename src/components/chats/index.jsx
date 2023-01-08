@@ -11,12 +11,12 @@ import {
   ChatItem,
   ChatSection,
   IconSection,
+  StatusIcon,
 } from "./chats.styled";
 
 const Chats = ({ activeUserId }) => {
   const URL = process.env.REACT_APP_USERS_API;
   const { users, loading, error } = UseFetchAll(URL);
-
   const [isChat, setIsChat] = useState(false);
   const [onlineUser, setOnlineUser] = useState(null);
 
@@ -24,13 +24,10 @@ const Chats = ({ activeUserId }) => {
     setOnlineUser(generateRandomNumbers(activeUserId));
   }, [activeUserId]);
 
-  console.log("onlineUser", activeUserId);
-  console.log("onlineUser", onlineUser);
-
   const onChatModalHandler = () => {
     setIsChat(!isChat);
   };
-  console.log("activecheck", onlineUser?.includes(1));
+
   return (
     <ChatContainer>
       <ChatHeader onClick={onChatModalHandler}>
@@ -54,11 +51,13 @@ const Chats = ({ activeUserId }) => {
         {error ? <h1>{error}</h1> : null}
         {users?.map((user) => (
           <ChatItem key={user.id}>
-            <ListItem activeuser={onlineUser?.includes(user.id) ? 1 : 0}>
+            <ListItem>
               <Avatar src={user.profilepicture} alt={user.name} />
               {user.name}
             </ListItem>
-            <Typography></Typography>
+            <StatusIcon
+              activeuser={onlineUser?.includes(user.id) ? 1 : 0}
+            ></StatusIcon>
           </ChatItem>
         ))}
       </ChatSection>
