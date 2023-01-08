@@ -57,12 +57,10 @@ export const CompanyContainer = styled(Stack)(({ theme }) => ({
 export const AddressContainer = styled(Stack)(({ theme }) => ({
   flexGrow: 1,
   padding: "1rem",
-
   "& p": {
     color: theme.secondary,
     fontWeight: "550",
   },
-
   "& .MuiGrid-root": {
     minWidth: "15%",
   },
@@ -72,7 +70,7 @@ AddressContainer.defaultProps = {
 };
 
 export const Section = styled(Stack)({
-  padding: "0 2rem",
+  paddingLeft: "3rem",
 });
 Section.defaultProps = {
   spacing: 1,
@@ -83,6 +81,7 @@ export const MapContainer = styled(Box)({
   borderRadius: "2rem",
   height: "20rem",
   backgroundColor: "#EDEDEE",
+  overflow: "hidden",
 });
 
 export const Location = styled(Stack)(({ theme }) => ({

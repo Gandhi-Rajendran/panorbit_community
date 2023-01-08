@@ -20,11 +20,10 @@ export const UserInfo = styled(Grid)(({ theme }) => ({
   fontSize: "1rem",
   fontWeight: 600,
   color: theme.userInfo,
-
+  marginRight: "1rem",
   "&:hover": {
     cursor: "pointer",
   },
-
   "& .MuiAvatar-root": {
     width: "2.2rem",
     height: "2.2rem",

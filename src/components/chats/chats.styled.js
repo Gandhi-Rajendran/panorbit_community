@@ -64,7 +64,7 @@ export const ChatItem = styled(Stack)(({ theme, activeuser }) => ({
   "& li": {
     padding: "0.25rem 0",
     paddingBottom: 0,
-    backgroundColor: activeuser ? `${theme.online}` : `${theme.offline}`,
+    // backgroundColor: activeuser ? `${theme.online}` : `${theme.offline}`,
   },
 
   "& p": {

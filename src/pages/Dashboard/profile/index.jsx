@@ -73,7 +73,12 @@ const Profile = ({ user }) => {
           <Item>
             <Title>Zipcode :</Title> {user.address.zipcode}
           </Item>
-          <MapContainer>{/* <Map /> */}</MapContainer>
+          <MapContainer>
+            <Map
+              Lat={Number(user.address.geo.lat)}
+              Lng={Number(user.address.geo.lng)}
+            />
+          </MapContainer>
           <Location>
             <Stack>Lat :</Stack> {user.address.geo.lat}
             <Stack>Long :</Stack> {user.address.geo.lng}
