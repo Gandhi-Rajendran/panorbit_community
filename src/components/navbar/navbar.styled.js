@@ -10,14 +10,14 @@ export const NavbarContainer = styled(Stack)(({ theme }) => ({
 
 export const Item = styled(ListItem)({
   padding: 0,
-  // background: "grey",
 });
 
 export const Nav = styled(Link)(({ theme, select }) => ({
   color: select ? `${theme.navActive}` : `${theme.navInActive}`,
-  fontSize: "1.2rem",
+  fontSize: "1.1rem",
   fontWeight: 500,
-  margin: "0.5rem 3rem",
+  padding: "1rem 0",
+  margin: "0 2.5rem",
   width: "100%",
   display: "flex",
   alignItems: "center",
@@ -35,8 +35,8 @@ export const IconWrapper = styled(Icon)(({ theme }) => ({
   "&::before": {
     content: `""`,
     position: "absolute",
-    right: "0",
-    top: "-0.88rem",
+    right: 0,
+    top: "-0.45rem",
     width: "1.2rem",
     height: "1.2rem",
     borderBottomRightRadius: "12px",
@@ -47,7 +47,7 @@ export const IconWrapper = styled(Icon)(({ theme }) => ({
     content: `""`,
     position: "absolute",
     right: 0,
-    bottom: "-0.89rem",
+    bottom: "-0.45rem",
     width: "1.2rem",
     height: "1.2rem",
     borderTopRightRadius: "12px",
@@ -59,5 +59,5 @@ export const IconWrapper = styled(Icon)(({ theme }) => ({
 export const Divide = styled(Divider)(({ theme }) => ({
   borderBottomWidth: "0.1rem",
   borderColor: theme.navInActive,
-  margin: "0 3rem",
+  margin: "0 2.5rem",
 }));

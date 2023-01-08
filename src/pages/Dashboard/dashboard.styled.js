@@ -1,4 +1,4 @@
-import { Divider, Grid, Stack, styled } from "@mui/material";
+import { Stack, styled } from "@mui/material";
 
 export const DashboardContainer = styled(Stack)({
   width: "100vw",
@@ -12,9 +12,4 @@ export const DashboardContainer = styled(Stack)({
 export const Wrapper = styled(Stack)({
   gap: "1rem",
   flexGrow: 1,
-});
-
-export const Seperator = styled(Divider)({
-  // width: "100%",
-  // borderBottomWidth: "0.1rem",
 });

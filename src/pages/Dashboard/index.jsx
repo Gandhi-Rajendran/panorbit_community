@@ -1,14 +1,15 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
+import { Divider } from "@mui/material";
+import { UseFetchById } from "../../utils/fetch";
+import Spinner from "../../components/spinner";
 import Header from "../../components/header";
 import Navbar from "../../components/navbar";
 import Posts from "./posts";
 import Profile from "./profile";
 import Gallery from "./gallery";
 import Todo from "./todo";
-import { DashboardContainer, Seperator, Wrapper } from "./dashboard.styled";
-import { useParams } from "react-router-dom";
-import { UseFetchById } from "../../utils/constants";
-import Spinner from "../../components/spinner";
+import { DashboardContainer, Wrapper } from "./dashboard.styled";
 
 const Dashboard = () => {
   const [active, setActive] = useState("profile");
@@ -30,7 +31,7 @@ const Dashboard = () => {
           <Navbar {...{ active, onActiveHandler }} />
           <Wrapper>
             <Header {...{ active, user }} />
-            <Seperator flexItem />
+            <Divider flexItem />
             {active === "profile" && <Profile {...{ user }} />}
             {active === "posts" && <Posts />}
             {active === "gallery" && <Gallery />}

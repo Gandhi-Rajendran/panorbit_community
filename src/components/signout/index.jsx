@@ -8,6 +8,8 @@ import {
 } from "./signout.styled";
 
 const Signout = ({ id, open, anchorEl, handleClose }) => {
+  console.log(id, open, anchorEl, handleClose);
+
   const user = {
     id: 1,
     name: "Leanne Graham",

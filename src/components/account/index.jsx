@@ -1,6 +1,6 @@
 import { Avatar, Divider, ListItem, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { UseFetch } from "../../utils/constants";
+import { UseFetch } from "../../utils/fetch";
 import Spinner from "../spinner";
 import { AccountContainer, Header, Main } from "./account.styled";
 

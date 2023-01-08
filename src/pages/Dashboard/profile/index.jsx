@@ -1,24 +1,29 @@
-import { Avatar, Divider, Grid, Typography } from "@mui/material";
-import { Stack } from "@mui/system";
+import { Divider, Stack, Typography } from "@mui/material";
+import Map from "../../../components/map";
+import SimpleMap from "../../../components/map";
+import { generateRandomNumbers } from "../../../utils/helper";
 import {
-  AddressWrapper,
-  BioWrapper,
-  CompanyWrapper,
+  AddressContainer,
+  BioContainer,
+  CompanyContainer,
   Details,
   Item,
   Location,
+  MapContainer,
   ProfileContainer,
   Section,
   Title,
 } from "./profile.styled";
 
 const Profile = ({ user }) => {
+  const randomNumbers = generateRandomNumbers(user.id);
+  console.log(randomNumbers);
+
   return (
     <ProfileContainer direction="row">
       <Details>
-        <BioWrapper>
+        <BioContainer>
           <Stack sx={{ alignItems: "center" }}>
-            {/* <Avatar src={user.profilepicture} alt={user.name} /> */}
             <img src={user.profilepicture} alt={user.name} />
           </Stack>
           <Typography variant="p" component="p">
@@ -36,9 +41,9 @@ const Profile = ({ user }) => {
           <Item>
             <Title>Website :</Title> {user.website}
           </Item>
-        </BioWrapper>
+        </BioContainer>
         <Divider flexItem middle={1} />
-        <CompanyWrapper>
+        <CompanyContainer>
           <Typography variant="p" component="p">
             Company
           </Typography>
@@ -51,12 +56,12 @@ const Profile = ({ user }) => {
           <Item>
             <Title>Bs :</Title> {user.company.bs}
           </Item>
-        </CompanyWrapper>
+        </CompanyContainer>
       </Details>
       <Divider orientation="vertical" flexItem />
-      <AddressWrapper>
+      <AddressContainer>
         <Typography variant="p" component="p">
-          Address
+          Address :
         </Typography>
         <Section>
           <Item>
@@ -71,17 +76,17 @@ const Profile = ({ user }) => {
           <Item>
             <Title>Zipcode :</Title> {user.address.zipcode}
           </Item>
-          <Avatar variant="square" />
-          <Location container>
-            <Grid item>Lat:{user.address.geo.lat}</Grid>
-            <Grid item>Long:{user.address.geo.lng}</Grid>
+          <MapContainer>{/* <Map /> */}</MapContainer>
+          <Location>
+            <Stack>Lat :</Stack> {user.address.geo.lat}
+            <Stack>Long :</Stack> {user.address.geo.lng}
           </Location>
-
-          {/* <Map /> */}
         </Section>
-      </AddressWrapper>
+      </AddressContainer>
     </ProfileContainer>
   );
 };
 
 export default Profile;
+
+/* <SimpleMap Lat={user.address.geo.lat} Lng={user.address.geo.lat} /> */

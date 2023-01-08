@@ -17,7 +17,7 @@ export const Title = styled(Typography)(({ theme }) => ({
 export const UserInfo = styled(Grid)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
-  fontSize: "0.9rem",
+  fontSize: "1rem",
   fontWeight: 600,
   color: theme.userInfo,
 

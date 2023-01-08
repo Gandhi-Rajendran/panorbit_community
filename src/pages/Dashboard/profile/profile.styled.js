@@ -4,7 +4,6 @@ export const ProfileContainer = styled(Stack)(({ theme }) => ({
   flexGrow: 1,
   gap: "1rem",
   fontSize: "clamp(1.1rem,1vw,1.8rem)",
-  // backgroundColor: "darkblue",
   color: theme.primary,
   wordBreak: "break-word",
   fontWeight: "700",
@@ -24,51 +23,71 @@ export const Title = styled(Grid)(({ theme }) => ({
 }));
 
 export const Details = styled(Stack)(({ theme }) => ({
-  width: "35%",
+  width: "40%",
 }));
 
-export const BioWrapper = styled(Stack)({
+export const BioContainer = styled(Stack)({
   textAlign: "center",
   justifyContent: "space-evenly",
   flexGrow: 2.5,
 
   "& img": {
-    width: "55%",
+    width: "54%",
     borderRadius: "50%",
   },
 });
 
-export const CompanyWrapper = styled(Stack)({
+export const CompanyContainer = styled(Stack)(({ theme }) => ({
   textAlign: "center",
   flexGrow: 1,
   justifyContent: "space-evenly",
-});
+  "& p": {
+    color: theme.secondary,
+    fontWeight: "550",
+  },
+}));
 
-export const AddressWrapper = styled(Stack)({
-  backgroundColor: "coral",
+export const AddressContainer = styled(Stack)(({ theme }) => ({
   flexGrow: 1,
-  gap: 5,
-  padding: "2rem",
+  padding: "1rem",
+
+  "& p": {
+    color: theme.secondary,
+    fontWeight: "550",
+  },
+
   "& .MuiGrid-root": {
-    // marginLeft: "2rem",
     minWidth: "15%",
   },
-});
+}));
+AddressContainer.defaultProps = {
+  spacing: 1,
+};
 
-export const Section = styled(Box)({
-  backgroundColor: "gray",
+export const Section = styled(Stack)({
   padding: "0 2rem",
 });
-export const Map = styled(Avatar)({
-  height: "20%",
+Section.defaultProps = {
+  spacing: 1,
+};
+
+export const MapContainer = styled(Box)({
   width: "100%",
+  borderRadius: "2rem",
+  height: "20rem",
+  backgroundColor: "#EDEDEE",
 });
 
-export const Location = styled(Grid)(({ theme }) => ({
-  color: "red",
+export const Location = styled(Stack)(({ theme }) => ({
   direction: "row",
   justifyContent: "end",
+
+  "& div": {
+    color: theme.secondary,
+    paddingRight: "0.5rem",
+  },
 }));
 Location.defaultProps = {
-  spacing: 2,
+  direction: "row",
+  spacing: 4,
 };

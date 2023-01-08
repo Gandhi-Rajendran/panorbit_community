@@ -6,7 +6,7 @@ import { HeaderContainer, Title, UserInfo } from "./header.styled";
 const Header = ({ active, user }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
+  const id = open ? user.id : null;
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
