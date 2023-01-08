@@ -26,6 +26,7 @@ export const theme = createTheme({
   main: "#2C65C8",
   offline: "#D4D4D4",
   online: "#1DA653",
+  message: "#F1F1F1",
 
   //--- HOVER
   hover: "#F5F5F5",

@@ -15,7 +15,7 @@ const UserAccounts = () => {
   return (
     <>
       <Spinner loading={loading} />
-      {error ? <h1>{error}</h1> : null}
+      {error ? { error } : null}
       <AccountContainer>
         <Header variant="h6" component="h6">
           Select an account

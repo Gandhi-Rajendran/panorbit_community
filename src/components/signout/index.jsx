@@ -35,7 +35,7 @@ const Signout = ({ id, open, anchorEl, handleClose }) => {
   return (
     <>
       <Spinner loading={loading} />
-      {error ? <h1>{error}</h1> : null}
+      {error ? { error } : null}
       {activeUser ? (
         <SignoutContainer
           id={id}

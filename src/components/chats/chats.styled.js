@@ -5,8 +5,9 @@ export const ChatContainer = styled(Stack)(({ theme }) => ({
   zIndex: 100,
   right: 0,
   bottom: 0,
-  minWidth: "14rem",
-  border: `0.1rem solid ${theme.main}`,
+  minWidth: "14.5rem",
+  border: `0.15rem solid ${theme.main}`,
+  backgroundColor: theme.whitePrimary,
   borderBottom: "none",
   borderRadius: "1rem 1rem 0 0",
   overflow: "hidden",
@@ -14,7 +15,7 @@ export const ChatContainer = styled(Stack)(({ theme }) => ({
 
 export const ChatHeader = styled(Stack)(({ theme }) => ({
   width: "100%",
-  padding: "0.5rem",
+  padding: "0.6rem",
   backgroundColor: theme.main,
   fontSize: "0.8rem",
   color: theme.whitePrimary,
@@ -44,26 +45,25 @@ IconSection.defaultProps = {
   direction: "row",
 };
 
-export const ChatSection = styled(Stack)(({ theme, open }) => ({
-  height: "18rem",
-  padding: "0 0.25rem 0 0.4rem",
+export const ChatSection = styled(Stack)(({ open }) => ({
+  height: "18.5rem",
+  marginRight: "0.2rem",
+  padding: "0 0.4rem",
   fontSize: "0.8rem",
   fontWeight: 600,
   overflowY: "scroll",
   display: open ? "block" : "none",
-  backgroundColor: theme.whitePrimary,
 }));
 
 export const ChatItem = styled(Stack)(({ theme }) => ({
   alignItems: "center",
-
   "& .MuiAvatar-root": {
     width: "2rem",
     height: "2rem",
     marginRight: "0.5rem",
   },
   "& li": {
-    padding: "0.25rem 0",
+    padding: "0.3rem 0",
     paddingBottom: 0,
   },
   "&:hover": {

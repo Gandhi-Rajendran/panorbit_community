@@ -1,4 +1,4 @@
-import { Stack, styled, Typography } from "@mui/material";
+import { Stack, styled, TextField } from "@mui/material";
 
 export const MessageContainer = styled(Stack)(({ theme }) => ({
   position: "absolute",
@@ -6,10 +6,11 @@ export const MessageContainer = styled(Stack)(({ theme }) => ({
   right: "16rem",
   bottom: 0,
   minWidth: "17.5rem",
-  border: `0.1rem solid ${theme.main}`,
+  border: `0.15rem solid ${theme.main}`,
   borderBottom: "none",
   borderRadius: "1rem 1rem 0 0",
   overflow: "hidden",
+  backgroundColor: theme.whitePrimary,
 }));
 
 export const MessageHeader = styled(Stack)(({ theme }) => ({
@@ -24,8 +25,7 @@ export const MessageHeader = styled(Stack)(({ theme }) => ({
     diplay: "flex",
     margin: "auto",
   },
-  ". MuiStack-root": {
-    backgroundColor: "red",
+  "& svg": {
     "&:hover": {
       cursor: "pointer",
     },
@@ -48,40 +48,35 @@ HeaderSection.defaultProps = {
   direction: "row",
 };
 
-export const MessageSection = styled(Stack)(({ theme, isminimize }) => ({
-  height: "12rem",
-  padding: "0 0.25rem 0 0.4rem",
-  fontSize: "0.8rem",
-  fontWeight: 600,
+export const MessageSection = styled(Stack)(({ isminimize }) => ({
+  display: isminimize ? "flex" : "none",
+  height: "100%",
+}));
+
+export const Messages = styled(Stack)(({ theme }) => ({
   overflowY: "scroll",
-  display: isminimize ? "block" : "none",
-  backgroundColor: theme.whitePrimary,
-}));
-
-export const ChatItem = styled(Stack)(({ theme }) => ({
-  alignItems: "center",
-
-  "& .MuiAvatar-root": {
-    width: "2rem",
-    height: "2rem",
-    marginRight: "0.5rem",
-  },
-  "& li": {
-    padding: "0.25rem 0",
-    paddingBottom: 0,
-  },
-  "&:hover": {
-    cursor: "pointer",
-    backgroundColor: theme.hover,
+  height: "12rem",
+  fontWeight: 600,
+  padding: "0.5rem",
+  textAlign: "right",
+  "> p": {
+    fontSize: "0.8rem",
+    display: "inline",
+    padding: "0.25rem",
+    backgroundColor: theme.message,
   },
 }));
-ChatItem.defaultProps = {
-  direction: "row",
+
+export const Input = styled(TextField)(({ theme }) => ({
+  "& input": {
+    fontSize: "0.8rem",
+    padding: "0.5rem",
+  },
+  "& svg": {
+    fontSize: "1rem",
+    color: theme.main,
+  },
+}));
+Input.defaultProps = {
+  size: "small",
 };
-
-export const StatusIcon = styled(Typography)(({ theme, activeuser }) => ({
-  borderRadius: "50%",
-  width: "0.4rem",
-  height: "0.4rem",
-  backgroundColor: activeuser ? `${theme.online}` : `${theme.offline}`,
-}));
