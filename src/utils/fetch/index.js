@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export const UseFetchAll = (url) => {
-  const [datas, setDatas] = useState(null);
+  const [users, setDatas] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -12,19 +12,18 @@ export const UseFetchAll = (url) => {
       axios
         .get(url)
         .then((res) => {
-          setLoading(false);
           setError(null);
+          setLoading(false);
           return setDatas(res.data.users);
         })
         .catch((err) => {
-          console.log("Error", err);
           setError(err.message);
           setDatas(null);
           setLoading(false);
         });
     }, 500);
   }, [url]);
-  return { datas, loading, error };
+  return { users, loading, error };
 };
 
 // To get the individual user with the help of id. type of url "string" and id "number"
@@ -39,16 +38,14 @@ export const UseFetchById = (url, id) => {
       axios
         .get(url)
         .then((res) => {
-          setLoading(false);
-          setError(null);
           const getUserById = res.data.users?.filter(
             (user) => user.id === Number(id)
           )[0];
-          console.log("useFetchById");
+          setError(null);
+          setLoading(false);
           return setUser(getUserById);
         })
         .catch((err) => {
-          console.log(err);
           setError(err.message);
           setUser(null);
           setLoading(false);

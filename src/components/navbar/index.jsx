@@ -7,14 +7,19 @@ import {
   Nav,
   NavbarContainer,
 } from "./navbar.styled";
+import { useParams } from "react-router-dom";
 
 const Navbar = ({ active, onActiveHandler }) => {
+  const param = useParams();
+  const activeUserId = param.userId;
+
   const menus = [
     { id: 1, name: "Profile", value: "profile" },
     { id: 2, name: "Posts", value: "posts" },
     { id: 3, name: "Gallery", value: "gallery" },
     { id: 4, name: "ToDo", value: "ToDo" },
   ];
+
   return (
     <NavbarContainer>
       <List>
@@ -22,7 +27,7 @@ const Navbar = ({ active, onActiveHandler }) => {
           <div key={menu.id}>
             <Item>
               <Nav
-                to="/dashboard/1"
+                to={`/dashboard/${activeUserId}`}
                 select={active === menu.value ? 1 : 0}
                 onClick={() => onActiveHandler(menu.value)}
               >

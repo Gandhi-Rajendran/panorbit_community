@@ -7,7 +7,7 @@ import { AccountContainer, Header, Main } from "./userAccounts.styled";
 const UserAccounts = () => {
   const navigate = useNavigate();
   const URL = process.env.REACT_APP_USERS_API;
-  const { datas: users, loading, error } = UseFetchAll(URL);
+  const { users, loading, error } = UseFetchAll(URL);
   const loginHandler = (userId) => {
     navigate(`/dashboard/${userId}`);
   };

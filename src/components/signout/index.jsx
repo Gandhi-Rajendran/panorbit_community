@@ -1,19 +1,19 @@
-import { Avatar, Divider, Typography } from "@mui/material";
+import { Avatar, Divider, ListItem, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { UseFetchAll } from "../../utils/fetch";
 import Spinner from "../spinner";
 import {
-  List,
+  Item,
   SignoutButton,
   SignoutContainer,
-  UserGroupProfile,
+  UserGroupList,
   UserProfile,
 } from "./signout.styled";
 
 const Signout = ({ id, open, anchorEl, handleClose }) => {
   const navigate = useNavigate();
   const URL = process.env.REACT_APP_USERS_API;
-  const { datas: users, loading, error } = UseFetchAll(URL);
+  const { users, loading, error } = UseFetchAll(URL);
 
   //Get active user
   const activeUser = users?.find((user) => user.id === id);
@@ -49,17 +49,22 @@ const Signout = ({ id, open, anchorEl, handleClose }) => {
             <Typography>{activeUser.email}</Typography>
           </UserProfile>
           <Divider />
-          <UserGroupProfile>
+          <UserGroupList>
             {userGroup.map((user) => (
-              <List key={user.id} onClick={() => onUserHandler(user.id)}>
-                <Typography variant="div" component="div">
+              <Item
+                variant="div"
+                component="div"
+                key={user.id}
+                onClick={() => onUserHandler(user.id)}
+              >
+                <ListItem>
                   <Avatar src={user.profilepicture} alt={user.name} />
                   {user.name}
-                </Typography>
+                </ListItem>
                 {noDivider !== user.id ? <Divider flexItem /> : null}
-              </List>
+              </Item>
             ))}
-          </UserGroupProfile>
+          </UserGroupList>
           <SignoutButton onClick={onSignoutHandler}>Sign out</SignoutButton>
         </SignoutContainer>
       ) : null}

@@ -1,4 +1,5 @@
 import { Divider, Stack, Typography } from "@mui/material";
+import Chats from "../../../components/chats";
 import Map from "../../../components/map";
 import SimpleMap from "../../../components/map";
 import {
@@ -79,6 +80,7 @@ const Profile = ({ user }) => {
           </Location>
         </Section>
       </AddressContainer>
+      <Chats activeUserId={user.id} />
     </ProfileContainer>
   );
 };

@@ -8,44 +8,49 @@ export const theme = createTheme({
     },
   },
 
-  // ****************** Background Color ******************
+  // ****************** BACKGROUND ******************
 
-  //--- Login
+  //--- LOGIN
   loginModalHeader: "#F6F6F6",
-  loginModalMain: "#FFFFFF",
-  loginModalListHover: "#F6F6F6",
 
-  //--- Navbar
+  //--- NAVABR
   navGradientStart: "#3F55C8",
   navGradientEnd: "#583FC8",
   navArrow: "#ffffff",
   navBg: "#474DC8",
 
-  //--- signout
+  //--- SIGNOUT
   buttonBg: "#D55151",
 
-  //--- Hover
+  //--- CHATS
+  main: "#2C65C8",
+  offline: "#D4D4D4",
+  online: "#1DA653",
+
+  //--- HOVER
   hover: "#F5F5F5",
 
-  // ****************** Text Color ******************
-  //--- Login
+  // COMMMON
+  whitePrimary: "#FFFFFF",
+
+  // ****************** TEXT ******************
+  //--- LOGIN
   loginModalText: "#5b5b5b",
 
-  //--- Navbar
+  //--- NAVBAR
   navActive: "#FFFFFF",
   navInActive: "#A5A5E4",
 
-  //--- common
+  //--- COMMON
   primary: "#545454",
   secondary: "#9A9A9A",
   userInfo: "#4A4A4A",
-
   disable: "#EEEEEE",
   button: "#ffffff",
 
-  // ****************** Loader Color ******************
+  // ****************** LOADER ******************
   loader: "#4D49C8",
 
-  // ****************** Scrollbar Color ******************
-  scrollbarThumb: "#D8D8D8",
+  // ****************** SCROLLBAR ******************
+  scrollbarThumb: "#D4D4D4",
 });

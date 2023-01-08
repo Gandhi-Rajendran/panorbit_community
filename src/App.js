@@ -35,7 +35,6 @@ const App = () => {
           },
         })}
       />
-
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/login" />} />

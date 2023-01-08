@@ -1,12 +1,16 @@
-import { Avatar, Box, Grid, Stack, styled } from "@mui/material";
+import { Box, Grid, Stack, styled } from "@mui/material";
 
 export const ProfileContainer = styled(Stack)(({ theme }) => ({
   flexGrow: 1,
   gap: "1rem",
-  fontSize: "clamp(1.1rem,1vw,1.8rem)",
+  fontSize: "clamp(1.1rem,1vw,1.6rem)",
   color: theme.primary,
   wordBreak: "break-word",
   fontWeight: "700",
+  "& > hr": {
+    margin: "2rem 0",
+  },
+  position: "relative",
 }));
 
 export const Item = styled(Stack)({
@@ -22,9 +26,12 @@ export const Title = styled(Grid)(({ theme }) => ({
   textAlign: "right",
 }));
 
-export const Details = styled(Stack)(({ theme }) => ({
+export const Details = styled(Stack)({
   width: "40%",
-}));
+  "& hr": {
+    margin: "0 5rem",
+  },
+});
 
 export const BioContainer = styled(Stack)({
   textAlign: "center",

@@ -1,4 +1,11 @@
-import { Button, Popover, Stack, styled } from "@mui/material";
+import {
+  Button,
+  List,
+  Popover,
+  Stack,
+  styled,
+  Typography,
+} from "@mui/material";
 
 export const SignoutContainer = styled(Popover)({
   "& .MuiPaper-root": {
@@ -42,9 +49,10 @@ export const UserProfile = styled(Stack)(({ theme }) => ({
   },
 }));
 
-export const UserGroupProfile = styled(Stack)({
+export const UserGroupList = styled(List)({
   maxHeight: "6.5rem",
   overflowY: "scroll",
+  padding: 0,
 
   // SCROLLBAR
   "&::-webkit-scrollbar-track-piece:start": {
@@ -56,14 +64,11 @@ export const UserGroupProfile = styled(Stack)({
   },
 });
 
-export const List = styled(Stack)(({ theme }) => ({
-  "& div": {
+export const Item = styled(Typography)(({ theme }) => ({
+  "& li": {
     color: theme.primary,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    padding: "0.4rem 0.5rem",
     fontSize: "0.9rem",
-    margin: "0.2rem 0",
     "& .MuiAvatar-root": {
       marginRight: "0.5rem",
     },
@@ -78,7 +83,7 @@ export const SignoutButton = styled(Button)(({ theme }) => ({
   borderRadius: "1.5rem",
   backgroundColor: theme.buttonBg,
   color: theme.button,
-  marginTop: "0.5rem",
+  marginTop: "0.6rem",
   "&:hover": {
     backgroundColor: theme.buttonBg,
     transform: "scale(0.95)",

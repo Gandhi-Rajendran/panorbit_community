@@ -25,7 +25,7 @@ export const Main = styled(List)(({ theme }) => ({
   marginRight: "0.35rem",
   fontSize: "1.rem",
   fontWeight: 450,
-  backgroundColor: theme.loginModalMain,
+  backgroundColor: theme.whitePrimary,
   position: "relative",
 
   "& .MuiAvatar-root": {
