@@ -5,4 +5,9 @@
   font-family: "Open Sans", sans-serif;
   text-transform: none;
   text-decoration: none;
+
+  /* Disable text selection throughout webpage */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }

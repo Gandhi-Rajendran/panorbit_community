@@ -1,12 +1,16 @@
-import { Button, Popover, Stack, styled, Typography } from "@mui/material";
+import { Button, Popover, Stack, styled } from "@mui/material";
 
 export const SignoutContainer = styled(Popover)({
   "& .MuiPaper-root": {
     marginTop: "1rem",
-    width: "16rem",
+    width: "18rem",
     textAlign: "center",
     padding: "1.5rem",
     borderRadius: "1.5rem",
+  },
+
+  "& hr": {
+    margin: "0 1rem",
   },
 });
 SignoutContainer.defaultProps = {
@@ -30,26 +34,43 @@ export const UserProfile = styled(Stack)(({ theme }) => ({
   },
   "& p": {
     color: theme.primary,
-    padding: "0.1rem 0",
     fontSize: "1.2rem",
   },
   "& p:last-of-type": {
     color: theme.secondary,
-    fontSize: "1.1rem",
+    fontSize: "0.9rem",
   },
 }));
 
-export const List = styled(Typography)(({ theme }) => ({
-  color: theme.primary,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  fontSize: "1rem",
-  padding: "0.5rem 0",
-  "& .MuiAvatar-root": {
-    width: "2.5rem",
-    height: "2.5rem",
-    marginRight: "0.5rem",
+export const UserGroupProfile = styled(Stack)({
+  maxHeight: "6.5rem",
+  overflowY: "scroll",
+
+  // SCROLLBAR
+  "&::-webkit-scrollbar-track-piece:start": {
+    marginTop: "0.8rem",
+  },
+
+  "&::-webkit-scrollbar-track-piece:end": {
+    marginTop: "0.5rem",
+  },
+});
+
+export const List = styled(Stack)(({ theme }) => ({
+  "& div": {
+    color: theme.primary,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "0.9rem",
+    margin: "0.2rem 0",
+    "& .MuiAvatar-root": {
+      marginRight: "0.5rem",
+    },
+  },
+  "& :hover": {
+    cursor: "pointer",
+    backgroundColor: theme.hover,
   },
 }));
 

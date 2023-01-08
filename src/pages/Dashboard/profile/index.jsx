@@ -1,7 +1,6 @@
 import { Divider, Stack, Typography } from "@mui/material";
 import Map from "../../../components/map";
 import SimpleMap from "../../../components/map";
-import { generateRandomNumbers } from "../../../utils/helper";
 import {
   AddressContainer,
   BioContainer,
@@ -16,9 +15,6 @@ import {
 } from "./profile.styled";
 
 const Profile = ({ user }) => {
-  const randomNumbers = generateRandomNumbers(user.id);
-  console.log(randomNumbers);
-
   return (
     <ProfileContainer direction="row">
       <Details>

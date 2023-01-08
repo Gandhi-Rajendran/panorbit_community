@@ -26,8 +26,8 @@ export const UserInfo = styled(Grid)(({ theme }) => ({
   },
 
   "& .MuiAvatar-root": {
-    width: "2rem",
-    height: "2rem",
+    width: "2.2rem",
+    height: "2.2rem",
     marginRight: "0.5rem",
   },
 }));

@@ -3,10 +3,6 @@ import LandingPage from "./pages/login";
 import { GlobalStyles, ThemeProvider } from "@mui/material";
 import { theme } from "./utils/theme";
 import Dashboard from "./pages/Dashboard";
-// import Profile from "./pages/profile";
-// import Gallery from "./pages/gallery";
-// import Posts from "./pages/posts";
-// import Todo from "./pages/todo";
 
 const App = () => {
   return (
@@ -45,11 +41,6 @@ const App = () => {
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<LandingPage />} />
           <Route path="/dashboard/:userId/" element={<Dashboard />} />
-          {/* <Route path="/user/:userId/profile" element={<Profile />} />
-            <Route path="/user/:userId/gallery" element={<Gallery />} />
-            <Route path="/user/:userId/posts" element={<Posts />} />
-            <Route path="/user/:userId/todo" element={<Todo />} />
-          </Route> */}
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

@@ -1,4 +1,5 @@
 import { Avatar } from "@mui/material";
+import { Stack } from "@mui/system";
 import { useState } from "react";
 import Signout from "../signout";
 import { HeaderContainer, Title, UserInfo } from "./header.styled";

@@ -1,13 +1,13 @@
 import { Avatar, Divider, ListItem, Stack } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { UseFetch } from "../../utils/fetch";
+import { UseFetchAll } from "../../utils/fetch";
 import Spinner from "../spinner";
 import { AccountContainer, Header, Main } from "./account.styled";
 
 const Accounts = () => {
   const navigate = useNavigate();
   const URL = process.env.REACT_APP_USERS_API;
-  const { datas: users, loading, error } = UseFetch(URL);
+  const { datas: users, loading, error } = UseFetchAll(URL);
   const loginHandler = (userId) => {
     navigate(`/dashboard/${userId}`);
   };

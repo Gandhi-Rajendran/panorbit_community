@@ -18,15 +18,14 @@ export const theme = createTheme({
   //--- Navbar
   navGradientStart: "#3F55C8",
   navGradientEnd: "#583FC8",
-  // navGradientStart: "#3C57C8",
-  // navGradientEnd: "#5840C8",
   navArrow: "#ffffff",
   navBg: "#474DC8",
 
   //--- signout
   buttonBg: "#D55151",
 
-  //--- Nav
+  //--- Hover
+  hover: "#F5F5F5",
 
   // ****************** Text Color ******************
   //--- Login

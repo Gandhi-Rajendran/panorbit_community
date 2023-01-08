@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const UseFetch = (url) => {
+export const UseFetchAll = (url) => {
   const [datas, setDatas] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -14,7 +14,6 @@ export const UseFetch = (url) => {
         .then((res) => {
           setLoading(false);
           setError(null);
-          console.log("useFetch");
           return setDatas(res.data.users);
         })
         .catch((err) => {
@@ -23,7 +22,7 @@ export const UseFetch = (url) => {
           setDatas(null);
           setLoading(false);
         });
-    }, 100);
+    }, 500);
   }, [url]);
   return { datas, loading, error };
 };
@@ -54,7 +53,7 @@ export const UseFetchById = (url, id) => {
           setUser(null);
           setLoading(false);
         });
-    }, 100);
+    }, 500);
   }, [url, id]);
   return { user, loading, error };
 };
