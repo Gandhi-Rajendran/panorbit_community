@@ -18,11 +18,12 @@ import {
 
 const Chats = ({ activeUserId }) => {
   const URL = process.env.REACT_APP_USERS_API;
-  const { users, loading, error } = UseFetchAll(URL);
+  const { users: usersList, loading, error } = UseFetchAll(URL);
   const [isChat, setIsChat] = useState(false);
   const [onlineUser, setOnlineUser] = useState(null);
   const [isMinimize, setIsMinimize] = useState(false);
   const [isMessage, setIsMessage] = useState(null);
+  const users = usersList?.filter((user) => user.id !== activeUserId);
 
   const onModalMinimizeHandler = () => {
     setIsMinimize(!isMinimize);

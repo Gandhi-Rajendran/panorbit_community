@@ -3,24 +3,44 @@ import { Stack, styled } from "@mui/material";
 export const LoginContainer = styled(Stack)({
   width: "100vw",
   height: "100vh",
+  background: `url("./wave.svg")`,
+  backgroundRepeat: "no-repeat",
+  backgroundPositionY: "10rem",
+  backgroundSize: "contain",
 
-  "& svg": {
-    position: "absolute",
-    zIndex: "-1",
-    // top: "10%",
-    width: "100vw",
+  "> div": {
+    background: `url("./wave.svg")`,
+    backgroundRepeat: "no-repeat",
+    backgroundPositionY: "10rem",
+    backgroundSize: "contain",
   },
+  // "& svg": {
+  //   position: "absolute",
+  //   zIndex: "-1",
+  //   // top: "10%",
+  //   width: "100vw",
+  // },
 });
 // export const Div = styled("div")({
-//   width: "80%",
+//   width: "150%",
 //   height: "50rem",
-//   background: "darkblue",
+//   backgroundColor: "darkblue",
 //   position: "absolute",
 //   borderRadius: "40% 20% 80% 60%",
-//   zIndex: -1,
-//   top: "-60%",
-//   right: "-20%",
+//   zIndex: "-1",
+//   top: " -62%",
+//   right: "-31%",
+
+//   "&::after": {
+//     position: "absolute",
+//     backgroundColor: "red",
+//     width: "150%",
+//     height: "50rem",
+//     top: " -62%",
+//     right: "-31%",
+//   },
 // });
+
 // export const Div1 = styled("div")({
 //   width: "50%",
 //   height: "50%",

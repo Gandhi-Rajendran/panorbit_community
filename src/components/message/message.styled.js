@@ -1,11 +1,11 @@
-import { Stack, styled, TextField } from "@mui/material";
+import { Grid, List, Stack, styled, TextField } from "@mui/material";
 
 export const MessageContainer = styled(Stack)(({ theme }) => ({
   position: "absolute",
   zIndex: 100,
   right: "16rem",
   bottom: 0,
-  minWidth: "17.5rem",
+  width: "16.5rem",
   border: `0.15rem solid ${theme.main}`,
   borderBottom: "none",
   borderRadius: "1rem 1rem 0 0",
@@ -33,7 +33,7 @@ export const MessageHeader = styled(Stack)(({ theme }) => ({
 }));
 MessageHeader.defaultProps = {
   direction: "row",
-  spacing: 3,
+  spacing: 1,
 };
 
 export const HeaderSection = styled(Stack)({
@@ -57,15 +57,21 @@ export const Messages = styled(Stack)(({ theme }) => ({
   overflowY: "scroll",
   height: "12rem",
   fontWeight: 600,
-  padding: "0.5rem",
+  paddingLeft: "0.5rem",
+  paddingRight: "0.2rem",
   textAlign: "right",
-  "> p": {
-    fontSize: "0.8rem",
-    display: "inline",
-    padding: "0.25rem",
+  "& p": {
+    fontSize: "0.7rem",
+    padding: "0.3rem",
+    borderRadius: "0.3rem",
     backgroundColor: theme.message,
   },
 }));
+Messages.defaultProps = {
+  direction: "column",
+  spacing: 0.6,
+  alignItems: "end",
+};
 
 export const Input = styled(TextField)(({ theme }) => ({
   "& input": {
