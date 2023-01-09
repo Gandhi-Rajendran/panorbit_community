@@ -3,7 +3,7 @@ import { Stack, styled } from "@mui/material";
 export const LoginContainer = styled(Stack)({
   width: "100vw",
   height: "100vh",
-  background: `url("./wave.svg")`,
+  background: `url("./gradient-wave.svg")`,
   backgroundRepeat: "no-repeat",
   // backgroundPositionY: "10rem",
   backgroundSize: "contain",
