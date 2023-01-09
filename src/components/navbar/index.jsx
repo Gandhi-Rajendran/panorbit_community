@@ -17,7 +17,7 @@ const Navbar = ({ active, onActiveHandler }) => {
     { id: 1, name: "Profile", value: "profile" },
     { id: 2, name: "Posts", value: "posts" },
     { id: 3, name: "Gallery", value: "gallery" },
-    { id: 4, name: "ToDo", value: "ToDo" },
+    { id: 4, name: "ToDo", value: "toDo" },
   ];
 
   return (
