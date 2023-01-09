@@ -5,21 +5,8 @@ export const LoginContainer = styled(Stack)({
   height: "100vh",
   background: `url("./wave.svg")`,
   backgroundRepeat: "no-repeat",
-  backgroundPositionY: "10rem",
+  // backgroundPositionY: "10rem",
   backgroundSize: "contain",
-
-  "> div": {
-    background: `url("./wave.svg")`,
-    backgroundRepeat: "no-repeat",
-    backgroundPositionY: "10rem",
-    backgroundSize: "contain",
-  },
-  // "& svg": {
-  //   position: "absolute",
-  //   zIndex: "-1",
-  //   // top: "10%",
-  //   width: "100vw",
-  // },
 });
 // export const Div = styled("div")({
 //   width: "150%",
