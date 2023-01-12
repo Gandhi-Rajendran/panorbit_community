@@ -9,6 +9,7 @@ import {
 
 export const SignoutContainer = styled(Popover)({
   "& .MuiPaper-root": {
+    height: "40%",
     marginTop: "1rem",
     width: "18rem",
     textAlign: "center",
