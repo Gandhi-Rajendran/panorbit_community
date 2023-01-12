@@ -14,13 +14,13 @@ const UserAccounts = () => {
 
   return (
     <>
-      <Spinner loading={loading} />
-      {error ? { error } : null}
       <AccountContainer>
         <Header variant="h6" component="h6">
           Select an account
         </Header>
         <Main>
+          <Spinner loading={loading} />
+          {error ? { error } : null}
           {users?.map((user) => (
             <Typography
               variant="div"

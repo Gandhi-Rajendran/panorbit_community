@@ -7,6 +7,9 @@ export const DashboardContainer = styled(Stack)({
   gap: "2rem",
   position: "relative",
   flexDirection: "row",
+  "& ::-webkit-scrollbar": {
+    width: "0.3rem", // for vertical scroll
+  },
 });
 
 export const Wrapper = styled(Stack)({

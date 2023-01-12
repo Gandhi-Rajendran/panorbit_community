@@ -83,28 +83,28 @@ const Message = (props) => {
               <Typography key={i}>{msg}</Typography>
             ))}
           </Messages>
-          <form onSubmit={(e) => addMessageHandler(e, user.id, msg)}>
-            <Input
-              type="text"
-              fullWidth
-              ref={msgRef}
-              value={msg}
-              onChange={(e) => setMsg(e.target.value)}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      onClick={(e) => addMessageHandler(e, user.id, msg)}
-                      edge="end"
-                    >
-                      <SendIcon />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-          </form>
         </Box>
+        <form onSubmit={(e) => addMessageHandler(e, user.id, msg)}>
+          <Input
+            type="text"
+            fullWidth
+            ref={msgRef}
+            value={msg}
+            onChange={(e) => setMsg(e.target.value)}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={(e) => addMessageHandler(e, user.id, msg)}
+                    edge="end"
+                  >
+                    <SendIcon />
+                  </IconButton>
+                </InputAdornment>
+              ),
+            }}
+          />
+        </form>
       </MessageSection>
     </MessageContainer>
   ) : null;

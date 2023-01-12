@@ -50,10 +50,11 @@ HeaderSection.defaultProps = {
 export const MessageSection = styled(Stack)(({ isminimize, theme }) => ({
   borderLeft: `0.15rem solid ${theme.main}`,
   borderRight: `0.15rem solid ${theme.main}`,
-
   display: isminimize ? "flex" : "none",
   height: "100%",
-  "& .MuiBox-root": {},
+  "& .MuiBox-root": {
+    paddingRight: "0.1rem",
+  },
 }));
 
 export const Messages = styled(Stack)(({ theme }) => ({
@@ -63,6 +64,7 @@ export const Messages = styled(Stack)(({ theme }) => ({
   paddingLeft: "0.5rem",
   paddingRight: "0.2rem",
   textAlign: "right",
+
   "& p": {
     fontSize: "0.7rem",
     padding: "0.3rem",

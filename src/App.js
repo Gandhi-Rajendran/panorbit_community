@@ -11,11 +11,10 @@ const App = () => {
         styles={(theme) => ({
           "*": {
             "&::-webkit-scrollbar": {
-              width: "0.3rem", // for vertical scroll
-              height: "0.3rem", // for horizontal scroll
+              width: "0.4rem", // for vertical scroll
+              height: "0.4rem", // for horizontal scroll
               backgroundColor: "transparent",
               WebkitAppearance: "none",
-              marginRight: "-8px",
             },
 
             "&::-webkit-scrollbar-thumb": {

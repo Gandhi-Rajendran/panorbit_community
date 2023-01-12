@@ -24,21 +24,26 @@ const Dashboard = () => {
 
   return (
     <>
-      <Spinner loading={loading} />
-      {error ? { error } : null}
-      {user ? (
-        <DashboardContainer>
-          <Navbar {...{ active, onActiveHandler }} />
-          <Wrapper>
-            <Header {...{ active, user }} />
-            <Divider flexItem />
-            {active === "profile" && <Profile {...{ user }} />}
-            {active === "posts" && <Posts />}
-            {active === "gallery" && <Gallery />}
-            {active === "toDo" && <Todo />}
-          </Wrapper>
-        </DashboardContainer>
-      ) : null}
+      {loading ? (
+        <Spinner loading={loading} />
+      ) : (
+        <>
+          {error ? { error } : null}
+          {user ? (
+            <DashboardContainer>
+              <Navbar {...{ active, onActiveHandler }} />
+              <Wrapper>
+                <Header {...{ active, user }} />
+                <Divider flexItem />
+                {active === "profile" && <Profile {...{ user }} />}
+                {active === "posts" && <Posts />}
+                {active === "gallery" && <Gallery />}
+                {active === "toDo" && <Todo />}
+              </Wrapper>
+            </DashboardContainer>
+          ) : null}
+        </>
+      )}
     </>
   );
 };
