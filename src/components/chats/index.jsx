@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Avatar, Icon, ListItem } from "@mui/material";
+import { Avatar, Box, Icon, ListItem } from "@mui/material";
 import ModeCommentOutlinedIcon from "@mui/icons-material/ModeCommentOutlined";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
@@ -63,24 +63,26 @@ const Chats = ({ activeUserId }) => {
           </IconWrapper>
         </ChatHeader>
         <ChatSection open={isChat ? 1 : 0}>
-          {loading ? "Loading" : null}
-          {error ? { error } : null}
-          {users?.map((user) => (
-            <ChatItem key={user.id}>
-              <ListItem
-                onClick={() => {
-                  setIsMinimize(true);
-                  setIsMessage(user);
-                }}
-              >
-                <Avatar src={user.profilepicture} alt={user.name} />
-                {user.name}
-              </ListItem>
-              <StatusIcon
-                activeuser={onlineUser?.includes(user.id) ? 1 : 0}
-              ></StatusIcon>
-            </ChatItem>
-          ))}
+          <Box>
+            {loading ? "Loading" : null}
+            {error ? { error } : null}
+            {users?.map((user) => (
+              <ChatItem key={user.id}>
+                <ListItem
+                  onClick={() => {
+                    setIsMinimize(true);
+                    setIsMessage(user);
+                  }}
+                >
+                  <Avatar src={user.profilepicture} alt={user.name} />
+                  {user.name}
+                </ListItem>
+                <StatusIcon
+                  activeuser={onlineUser?.includes(user.id) ? 1 : 0}
+                ></StatusIcon>
+              </ChatItem>
+            ))}
+          </Box>
         </ChatSection>
       </ChatContainer>
       <Message

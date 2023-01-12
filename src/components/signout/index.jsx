@@ -1,4 +1,4 @@
-import { Avatar, Divider, ListItem, Typography } from "@mui/material";
+import { Avatar, Box, Divider, ListItem, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { UseFetchAll } from "../../utils/fetch";
 import Spinner from "../spinner";
@@ -10,7 +10,7 @@ import {
   UserProfile,
 } from "./signout.styled";
 
-const Signout = ({ id, open, anchorEl, handleClose }) => {
+const Signout = ({ id, anchorEl, handleClose }) => {
   const navigate = useNavigate();
   const URL = process.env.REACT_APP_USERS_API;
   const { users, loading, error } = UseFetchAll(URL);
@@ -33,16 +33,16 @@ const Signout = ({ id, open, anchorEl, handleClose }) => {
   };
 
   return (
-    <>
+    <SignoutContainer
+      id={id}
+      open={true}
+      anchorEl={anchorEl}
+      onClose={handleClose}
+    >
       <Spinner loading={loading} />
       {error ? { error } : null}
       {activeUser ? (
-        <SignoutContainer
-          id={id}
-          open={open}
-          anchorEl={anchorEl}
-          onClose={handleClose}
-        >
+        <Box>
           <UserProfile>
             <Avatar src={activeUser.profilepicture} alt={activeUser.name} />
             <Typography>{activeUser.name}</Typography>
@@ -66,9 +66,9 @@ const Signout = ({ id, open, anchorEl, handleClose }) => {
             ))}
           </UserGroupList>
           <SignoutButton onClick={onSignoutHandler}>Sign out</SignoutButton>
-        </SignoutContainer>
+        </Box>
       ) : null}
-    </>
+    </SignoutContainer>
   );
 };
 

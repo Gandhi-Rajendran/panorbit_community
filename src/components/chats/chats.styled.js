@@ -4,9 +4,9 @@ export const ChatContainer = styled(Stack)(({ theme }) => ({
   position: "absolute",
   zIndex: 100,
   right: 0,
-  bottom: 0,
+  bottom: "-1.5rem",
   minWidth: "14.5rem",
-  border: `0.15rem solid ${theme.main}`,
+  // border: `0.15rem solid ${theme.main}`,
   backgroundColor: theme.whitePrimary,
   borderBottom: "none",
   borderRadius: "1rem 1rem 0 0",
@@ -45,14 +45,19 @@ IconSection.defaultProps = {
   direction: "row",
 };
 
-export const ChatSection = styled(Stack)(({ open }) => ({
-  height: "18.5rem",
-  marginRight: "0.2rem",
-  padding: "0 0.4rem",
+export const ChatSection = styled(Stack)(({ open, theme }) => ({
+  padding: "0 0.25rem",
   fontSize: "0.8rem",
   fontWeight: 600,
-  overflowY: "scroll",
   display: open ? "block" : "none",
+  borderLeft: `0.1rem solid ${theme.main}`,
+  borderRight: `0.1rem solid ${theme.main}`,
+
+  "& .MuiBox-root": {
+    height: "18.5rem",
+    paddingRight: "0.4rem",
+    overflowY: "scroll",
+  },
 }));
 
 export const ChatItem = styled(Stack)(({ theme }) => ({

@@ -4,6 +4,7 @@ import { theme } from "../../utils/theme";
 
 export const Loader = styled(PulseLoader)({
   position: "absolute",
+  zIndex: "90",
   top: "50%",
   left: "50%",
   transform: "translate(-50%,-50%)",

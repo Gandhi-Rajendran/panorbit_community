@@ -1,5 +1,4 @@
 import { Avatar } from "@mui/material";
-import { Stack } from "@mui/system";
 import { useState } from "react";
 import Signout from "../signout";
 import { HeaderContainer, Title, UserInfo } from "./header.styled";
@@ -27,7 +26,7 @@ const Header = ({ active, user }) => {
           <Avatar src={user.profilepicture} alt={user.name} /> {user.name}
         </UserInfo>
       </HeaderContainer>
-      <Signout {...{ id, open, anchorEl, handleClose }} />
+      {open ? <Signout {...{ id, anchorEl, handleClose }} /> : null}
     </>
   );
 };

@@ -11,17 +11,20 @@ const Map = ({ Lat, Lng }) => {
     lng: Lng,
   };
 
-  if (!isLoaded) {
-    return <Spinner loading={isLoaded} />;
-  }
   return (
-    <GoogleMap
-      center={center}
-      zoom={2}
-      mapContainerStyle={{ width: "100%", height: "100%" }}
-    >
-      <Marker position={center} />
-    </GoogleMap>
+    <>
+      {!isLoaded ? (
+        <Spinner loading={isLoaded} />
+      ) : (
+        <GoogleMap
+          center={center}
+          zoom={2}
+          mapContainerStyle={{ width: "100%", height: "100%" }}
+        >
+          <Marker position={center} />
+        </GoogleMap>
+      )}
+    </>
   );
 };
 

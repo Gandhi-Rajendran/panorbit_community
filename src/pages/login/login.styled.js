@@ -6,5 +6,5 @@ export const LoginContainer = styled(Stack)({
   height: "100vh",
   background: `url(${wave})`,
   backgroundRepeat: "no-repeat",
-  backgroundSize: "contain",
+  backgroundSize: "100vw 45vh",
 });

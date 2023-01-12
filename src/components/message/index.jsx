@@ -1,12 +1,10 @@
 import { useRef, useState } from "react";
 import {
   Avatar,
-  Grid,
+  Box,
   Icon,
   IconButton,
   InputAdornment,
-  ListItem,
-  Stack,
   Typography,
 } from "@mui/material";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
@@ -49,7 +47,8 @@ const Message = (props) => {
   const [msg, setMsg] = useState("");
   const msgRef = useRef();
 
-  const addMessageHandler = (userId, message) => {
+  const addMessageHandler = (e, userId, message) => {
+    e.preventDefault();
     if (message !== "") {
       userMessage[userId].push(message);
       setMsg("");
@@ -78,12 +77,14 @@ const Message = (props) => {
         </HeaderSection>
       </MessageHeader>
       <MessageSection isminimize={isMinimize ? 1 : 0}>
-        <Messages>
-          {userMessage[user.id].map((msg, i) => (
-            <Typography key={i}>{msg}</Typography>
-          ))}
-        </Messages>
-        <Stack>
+        <Box>
+          <Messages>
+            {userMessage[user.id].map((msg, i) => (
+              <Typography key={i}>{msg}</Typography>
+            ))}
+          </Messages>
+        </Box>
+        <form onSubmit={(e) => addMessageHandler(e, user.id, msg)}>
           <Input
             type="text"
             fullWidth
@@ -94,7 +95,7 @@ const Message = (props) => {
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
-                    onClick={() => addMessageHandler(user.id, msg)}
+                    onClick={(e) => addMessageHandler(e, user.id, msg)}
                     edge="end"
                   >
                     <SendIcon />
@@ -103,7 +104,7 @@ const Message = (props) => {
               ),
             }}
           />
-        </Stack>
+        </form>
       </MessageSection>
     </MessageContainer>
   ) : null;

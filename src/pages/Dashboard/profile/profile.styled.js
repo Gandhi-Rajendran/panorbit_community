@@ -76,11 +76,11 @@ Section.defaultProps = {
   spacing: 1,
 };
 
-export const MapContainer = styled(Box)({
-  width: "100%",
+export const MapContainer = styled(Stack)({
+  width: "90%",
+  alignSelf: "end",
   borderRadius: "2rem",
   height: "20rem",
-  backgroundColor: "#EDEDEE",
   overflow: "hidden",
 });
 
