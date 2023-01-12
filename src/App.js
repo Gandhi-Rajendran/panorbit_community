@@ -3,6 +3,7 @@ import LandingPage from "./pages/login";
 import { GlobalStyles, ThemeProvider } from "@mui/material";
 import { theme } from "./utils/theme";
 import Dashboard from "./pages/Dashboard";
+import PageNotFound from "./components/page-not-found";
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<LandingPage />} />
           <Route path="/dashboard/:userId/" element={<Dashboard />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

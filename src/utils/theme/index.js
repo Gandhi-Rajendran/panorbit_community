@@ -54,4 +54,7 @@ export const theme = createTheme({
 
   // ****************** SCROLLBAR ******************
   scrollbarThumb: "#D4D4D4",
+
+  // ****************** SCROLLBAR ******************
+  notFound: "#D4D4D4",
 });
