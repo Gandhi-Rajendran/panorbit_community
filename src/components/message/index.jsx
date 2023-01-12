@@ -1,12 +1,10 @@
 import { useRef, useState } from "react";
 import {
   Avatar,
-  Grid,
+  Box,
   Icon,
   IconButton,
   InputAdornment,
-  ListItem,
-  Stack,
   Typography,
 } from "@mui/material";
 import KeyboardArrowUpOutlinedIcon from "@mui/icons-material/KeyboardArrowUpOutlined";
@@ -49,7 +47,8 @@ const Message = (props) => {
   const [msg, setMsg] = useState("");
   const msgRef = useRef();
 
-  const addMessageHandler = (userId, message) => {
+  const addMessageHandler = (e, userId, message) => {
+    e.preventDefault();
     if (message !== "") {
       userMessage[userId].push(message);
       setMsg("");
@@ -78,32 +77,34 @@ const Message = (props) => {
         </HeaderSection>
       </MessageHeader>
       <MessageSection isminimize={isMinimize ? 1 : 0}>
-        <Messages>
-          {userMessage[user.id].map((msg, i) => (
-            <Typography key={i}>{msg}</Typography>
-          ))}
-        </Messages>
-        <Stack>
-          <Input
-            type="text"
-            fullWidth
-            ref={msgRef}
-            value={msg}
-            onChange={(e) => setMsg(e.target.value)}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    onClick={() => addMessageHandler(user.id, msg)}
-                    edge="end"
-                  >
-                    <SendIcon />
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-          />
-        </Stack>
+        <Box>
+          <Messages>
+            {userMessage[user.id].map((msg, i) => (
+              <Typography key={i}>{msg}</Typography>
+            ))}
+          </Messages>
+          <form onSubmit={(e) => addMessageHandler(e, user.id, msg)}>
+            <Input
+              type="text"
+              fullWidth
+              ref={msgRef}
+              value={msg}
+              onChange={(e) => setMsg(e.target.value)}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={(e) => addMessageHandler(e, user.id, msg)}
+                      edge="end"
+                    >
+                      <SendIcon />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+          </form>
+        </Box>
       </MessageSection>
     </MessageContainer>
   ) : null;
